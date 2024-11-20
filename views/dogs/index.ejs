@@ -1,0 +1,25 @@
+<!-- views/dogs/index.ejs -->
+ <!-- this page renders a list of all the dogs that are available at the rescue -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Dogs</title>
+</head>
+<body>
+    <h1>Dogs Available</h1>
+    <ul>
+        <% dogs.forEach(dog => { %>
+            <li>
+                <a href="/dogs/<%=dog._id%>">
+                    <%=dog.name%>
+                </a>
+            </li>
+        <% }) %>
+        <a href="/dogs/new">Add new dog!</a>
+    </ul>
+</body>
+</html>

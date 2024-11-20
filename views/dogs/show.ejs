@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Dog Show Page</title>
+</head>
+<body>
+    <h1><%= dog.name %></h1>
+    <h3> Breed: </h3>
+        <p> <%= dog.breed %> </p>
+    <h3> Sex: </h3>
+        <p> <%= dog.name %> is a <%= dog.sex %> </p>
+    <h3> Age: </h3>
+        <p> <%= dog.name %> is <%= dog.age %> years old.</p>
+    <h3>Have they been spayed/neutered?</h3>
+    <% if (dog.fixed) { %>
+        <p> <%= dog.name %> has been fixed!</p>
+    <% } else { %>
+        <p> <%= dog.name %> has not been fixed.</p>
+    <% } %>
+    <h3>Ready for adoption?</h3>
+    <% if (dog.readyToAdopt) { %>
+        <p> <%= dog.name %> is ready to be adopted!</p>
+    <% } else { %>
+        <p> <%= dog.name %> is not yet ready to be adopted.</p>
+    <% } %>
+    <button>
+        <a href="/dogs/<%=dog._id%>/edit">
+            <div class="index-link-text">Edit <%=dog.name%></div>
+        </a>
+    </button>
+    <form action="/dogs/<%=dog._id%>?_method=DELETE" method="POST">
+        <button type="submit">
+            <div class="index-link-text">Remove <%=dog.name%></div>
+        </button>
+    </form>
+    <button>
+        <a class="dogs-index-link" href="/dogs">
+            <div class="index-link-text">Back to Dogs</div>
+        </a>
+    </button>
+</body>
+</html>

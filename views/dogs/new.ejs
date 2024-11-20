@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Add a Dog</title>
+</head>
+<body>
+    <h1>Add a Dog!</h1>
+    <form action="/dogs" method="POST">
+        <label for="name">Name: </label>
+        <input name="name" type="text" value="Dog Name"/>
+        <label for="breed">Breed: </label>
+        <input name="breed" type="text" value="Dog Breed"/>
+        <label for="sex">Sex: </label>
+        <input name="sex" type="text" value="Female or Male"/>
+        <label for="age">Age (in years): </label>
+        <input name="age" type="number"/>
+        <label for="fixed">Are they spayed/neutuered?: </label>
+        <input name="fixed" type="checkbox"/>
+        <label for="readyToAdopt">Are they ready to be adopted?: </label>
+        <input name="readyToAdopt" type="checkbox"/>
+    </form>
+    <button type="submit">
+        <div class="index-link-text">Add dog</div>
+    </button>
+    <button>
+        <a class="dogs-index-link" href="/dogs">
+            <div class="index-link-text">Back to Dogs</div>
+        </a>
+    </button>
+</body>
+</html>

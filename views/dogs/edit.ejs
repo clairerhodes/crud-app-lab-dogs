@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit <%=dog.name%></h1>
+    <form action="/dogs/<%=dog._id%>?_method=PUT" method="POST"> <!-- trick ejs into doing a PUT by disgusing it as a POST-->
+        <label for="name">Name: </label>
+        <input name="name" type="text" value="<%=dog.name%>"/>
+        <label for="breed">Breed: </label>
+        <input name="breed" type="text" value="<%=dog.breed%>"/>
+        <label for="sex">Sex: </label>
+        <input name="sex" type="text" value="<%=dog.sex%>"/>
+        <label for="age">Age: </label>
+        <input name="age" type="number" value="<%=dog.age%>"/>
+        <label for="fixed">Spayed/neutuered?: </label>
+        <input
+            name="fixed"
+            type="checkbox"
+            <% if (dog.fixed) { %>
+                checked
+            <% } %> />
+        <label for="readyToAdopt">Ready to be Adopted?: </label>
+        <input
+            name="readyToAdopt"
+            type="checkbox"
+            <% if (dog.readyToAdopt) { %>
+                checked
+            <% } %> />
+        <button type="submit">
+            <div class="index-link-text">Update Dog Info</div>
+        </button>
+    </form>
+    <button>
+        <a class="dogs-index-link" href="/dogs">
+            <div class="index-link-text">Back to Dogs</div>
+        </a>
+    </button>
+</body>
+</html>
